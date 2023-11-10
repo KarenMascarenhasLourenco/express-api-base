@@ -24,7 +24,9 @@ server.use((req: Request, res: Response) => {
 });
 
 const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
- err.status ? res.status(err.status).json({error:'ocorreu um erro'}) : res.status(400).json({error:'ocorreu um erro'})
+ err.status ? res.status(err.status) : res.status(400)
+ err.message ? res.json({ error: err.message}): res.json({error: 'Ocorreu um erro'})
+ return
 };
 
 server.use(errorHandler);
