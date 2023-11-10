@@ -1,4 +1,4 @@
-import { Model, DataTypes } from " sequelize";
+import { Model, DataTypes } from "sequelize";
 import { sequelize } from "../instances/pg";
 
 export interface UserInstance extends Model {
